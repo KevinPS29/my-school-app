@@ -1,0 +1,105 @@
+/*paleta de colores
+blanco #FAFAFA, GRIS #C7EEFF, AZUL #0077C0, NEGRO #1D242B
+*/
+/*color del fondo y el color de la letra*/
+body {
+    background-image: linear-gradient(to top,black,#aa9eef);
+    color: white;
+    height: 707px;
+}
+/*estilo del icono y nombre de la App
+se utiliza FLEXBOX para que queden en una sola columna
+*/
+.bordesuperior {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* se redondea el icono de la App*/
+.schoolapp {
+    border-radius: 225px;
+}
+
+/*opacidad al pasar el mouse*/
+.schoolapp:hover {
+    opacity: 90%;
+}
+
+/*alinear a la izquierda My school APP*/
+.Nombre_de_app {
+    margin-left: auto;
+}
+
+/*opacidad al pasar el mouse*/
+.Nombre_de_app:hover {
+    opacity: 80%;
+}
+
+/*alinear registro y tamaño de letra*/
+.registro {
+    text-align: center;
+    font-size: 44px;
+}
+
+/*configuracion de formulario usando celdas de grilla*/
+.grid {
+    display: grid;
+    grid-template-rows: [row-1] 50px [row-2] 50px [row-3] 50px [row-4] 1fr;
+    grid-template-columns: [col-1] 50% [col-2] 50%;
+    grid-gap: 30px 30px;
+    /*Para separar cada selda de la grilla de la fila y columna*/
+    font-size: 13.5px;
+    /*tamaño de letra*/
+    font-weight: bold;
+    /*negrilla*/
+}
+
+/*alinear las celdas de NOMBRES, CEDULA, FECHA DE N ES DECIR FILA 1*/
+.FIL1 {
+    justify-self: end;
+}
+
+/*configuracion de fecha de nacimiento alinearlo mas a derecha*/
+.FECHA {
+    padding-right: 2px;
+}
+
+/*estilo a los formularios */
+.form {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 250px;
+    padding: 12px 10px;
+    margin: 8px 0;
+    border-style: none;
+    box-sizing: border-box;
+    /*ajusta las cajas a la pantalla*/
+    border-radius: 4px;
+}
+
+/*estilo al formulario al pasar el mouse*/
+.form:hover {
+    border: 1px solid #ccc;
+}
+
+/*ajustar el checkbox al centro*/
+.checkbox {
+    text-align: center;
+}
+
+/*ajustar los terminos y condiciones*/
+.a {
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+/*ajusta el tamaño de la letra y negrilla del boton*/
+.btn {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ladoIz {
+    justify-self: end;
+}

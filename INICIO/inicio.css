@@ -1,0 +1,92 @@
+/*paleta de colores
+blanco #FAFAFA, GRIS #C7EEFF, AZUL #0077C0, NEGRO #1D242B
+*/
+/*color del fondo y el color de la letra*/
+body {
+    background-image: linear-gradient(to top,black,#aa9eef);
+    color: white;
+}
+/*estilo del icono y nombre de la App
+se utiliza FLEXBOX para que queden en una sola columna
+*/
+.bordesuperior {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: 80px;
+}
+/* se redondea el icono de la App*/
+
+.logo, .schoolapp {
+    border-radius: 225px;
+}
+
+/*opacidad al pasar el mouse*/
+.schoolapp:hover{
+    opacity: 90%;
+}
+/*alinear a la izquierda My school APP*/
+.inicio_sesion {
+    margin-top: 5px;
+}
+
+.asuperior{
+    color: blueviolet;
+    font-weight: bold;
+}
+
+
+/*opacidad al pasar el mouse*/
+.Nombre_de_app:hover{
+    opacity: 80%;
+}
+
+.M2, .V2{
+    display: grid;
+    place-content: start center ;
+}
+
+.mis{
+    padding-left: 20px;
+}
+
+.text{
+    margin: 0 1em 1em 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.MISION, .VISION{
+    border-radius: 250px;
+    margin-top: 10px;
+    padding: auto;
+    opacity: 70%;
+}
+
+.mv{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:26px;
+}
+
+.IEJAVIER{  
+    display: grid;
+    place-content: center;
+    opacity: 50%;
+}
+
+.LOGO2 {
+    border-radius: 20%;
+    opacity: 70%;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:  space-between;
+}
+
