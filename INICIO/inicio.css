@@ -64,6 +64,12 @@ se utiliza FLEXBOX para que queden en una sola columna
     opacity: 70%;
 }
 
+.MISION:hover, .VISION:hover {
+    transform: scale(1.09);
+    transition: all 0.5s;
+    opacity: 50%;
+}
+
 .mv{
     font-family: 'Times New Roman', Times, serif;
     font-size:26px;
@@ -77,8 +83,12 @@ se utiliza FLEXBOX para que queden en una sola columna
 
 .LOGO2 {
     border-radius: 20%;
-    opacity: 70%;
+    transition: all 0.5s;
 }
+.LOGO2:hover {
+    transform: scale(1.09);
+}
+
 
 h1 {
     font-family: 'Times New Roman', Times, serif;

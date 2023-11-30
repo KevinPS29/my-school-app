@@ -10,7 +10,7 @@
   <body class="container">
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <div class="bordesuperior">
-      <img class="logo" src="../ESCUDO3.jpeg"width="70" height="70" >
+      <img class="logo" src="../iconos/imagenes/escudo3.jpeg"width="70" height="70" >
       <div>
         <button type="button" class="inicio_sesion btn btn-primary fw-medium">Iniciar sesion</button>
       </div>
@@ -34,11 +34,11 @@
       </div>
 
       <div class="IEJAVIER">
-        <img src="../ESCUDO3.jpeg" class="LOGO2" width="200">
+        <img src="../iconos/imagenes/escudo3.jpeg" class="LOGO2" width="200">
         <h4>I.E JAVIER CORTES</h4>
       </div>
     <footer>
-      <img class="schoolapp" src="../MY SCHOOL APP.jpeg" width="60" />
+      <img class="schoolapp" src="../iconos/imagenes/my_scholl_app.jpeg" width="60" />
       <p>Copyright 2023</p>
 </footer>
   </body>
