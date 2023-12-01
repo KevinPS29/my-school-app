@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="inicio.css" type="text/css" />
+    <link rel="stylesheet" href="../inicio/inicio.css" type="text/css" />
 </head>
-  <body class="container">
+      <body class="container">
+    <div class="loader"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- funcion para el cargue de la pagina -->
+    <script type="text/javascript">
+        $(window).load(function() {
+            $(".loader").fadeOut("slow");
+        });
+        </script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <div class="bordesuperior">
       <img class="logo" src="../iconos/imagenes/escudo3.jpeg"width="70" height="70" >
       <div>
-        <button type="button" class="inicio_sesion btn btn-primary fw-medium">Iniciar sesion</button>
+        <button type="button" onclick="window.location.href='/my_school_app/inicio_sesion/index.php'" class="inicio_sesion btn btn-primary fw-medium">Iniciar sesion</button>
       </div>
     </div>
 
@@ -20,7 +29,7 @@
       <div class="MV">
         <div class="M1">
           <div class="M2">
-            <img src="../MISION.jpeg" class="MISION" width="50">
+            <img src="../iconos/imagenes/mision.jpeg" class="MISION" width="50">
             <h6 class=" fst-italic fw-medium">Misión</h6>    
           </div>
           <div>
@@ -30,7 +39,7 @@
         </div>
         <div class="V1">
           <div class="V2">
-            <img src="../VISION.jpeg" class="VISION" width="50">
+            <img src="../iconos/imagenes/vision.jpeg" class="VISION" width="50">
             <h6 class=" fst-italic fw-medium ">Visión</h6>
           </div>
           <div>

@@ -132,6 +132,7 @@ a {
 .hover{
     color: white;
     margin-right: 20px;
+    text-decoration: none;
     transition: 0.2s;
 }
 

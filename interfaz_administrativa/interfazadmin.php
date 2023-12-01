@@ -5,7 +5,7 @@ session_start();
 // Verifica si el usuario ha iniciado sesión
 if (!isset($_SESSION["usuario"])) {
     // Usuario no autenticado, redirige al formulario de inicio de sesión
-    header("Location: index.php");
+    header("Location: ../inicio_sesion/index.php");
     exit();
 }
 
@@ -13,7 +13,7 @@ if (!isset($_SESSION["usuario"])) {
 if (isset($_GET["cerrar_sesion"])) {
     session_unset();
     session_destroy();
-    header('Location: index.php');
+    header('Location: ../inicio_sesion/index.php');
     exit();
 }
 ?>
@@ -41,17 +41,21 @@ if (isset($_GET["cerrar_sesion"])) {
         <!--borde superior de la pagina-->
     <div class="bordesuperior">
         <div>
-            <img class="logo" src="../iconos/imagenes/escudo3.jpeg" width="80">
+               <a href="../interfaz_administrativa/interfazadmin.php">
+                <img  class="logo" src="../iconos/imagenes/escudo3.jpeg" width="80">
+               </a>
         </div>
         <div class="bordesuperior">
-            <a class="hover" href="../asignatura/asignatura.html">Asignaturas</a>
-            <a class="hover" href="../CALIFICACIONES/index.html">Calificaciones</a>
-            <a class="hover" href="usuario.html" class="usuario"><?php echo $_SESSION["usuario"]; ?></a>
+            <a class="hover" href="../lista_docente/lista_docentes.php">Docente</a>
+            <a class="hover" href="../lista_estudiante/lista_estudiante.php">Estudiante</a>
+            <a class="hover" href="../lista_asignaturas/lista_asignaturas.php">Asignaturas</a>
+            <a class="hover" href="../lista_administrativo/lista_admin.php">Administrativos</a>
+            <a class="hover" href="../soporte/soporte.php">Soporte</a>
+            <a class="hover" class="usuario"><?php echo $_SESSION["usuario"]; ?></a>
             <div class="Dropdown">
                 <img class="configuracion" src="../iconos/imagenes/configuracion.jpeg" width="40">
                 <div class="Dropdown-content">
                     <a href="#">Ver perfil</a>
-                    <a href="#">configuración</a>
                     <a href="?cerrar_sesion">Cerrar sesión</a>
                 </div>
             </div>
@@ -73,16 +77,16 @@ if (isset($_GET["cerrar_sesion"])) {
                 <th class="titulo tabla1">Gestion Principal</th>
             </tr>
             <tr class="contenido tabla1">
-                <th class="th"> <button onclick="window.location.href='/my_school_app/inicio_sesion_funcional/lista_docentes.php'" class="btn_tabla1"><img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20"> Gestion Docente</button></th>
+                <th class="th"> <button onclick="window.location.href='/my_school_app/lista_docente/lista_docentes.php'" class="btn_tabla1"><img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20"> Gestion Docente</button></th>
             </tr>
             <tr class="contenido tabla1">
-                <th class="th"><button onclick="window.location.href='/my_school_app/inicio_sesion_funcional/lista_estudiante.php'" class="btn_tabla1"> <img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20"> Gestion Estudiante</button></th>
+                <th class="th"><button onclick="window.location.href='/my_school_app/lista_estudiante/lista_estudiante.php'" class="btn_tabla1"> <img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20"> Gestion Estudiante</button></th>
             </tr>
             <tr class="contenido tabla1">
-                <th class="th"><button onclick="window.location.href='/my_school_app/inicio_sesion_funcional/lista_asignaturas.php'" class="btn_tabla1"><img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20">Gestion Asignatura</button></th>
+                <th class="th"><button onclick="window.location.href='/my_school_app/lista_asignaturas/lista_asignaturas.php'" class="btn_tabla1"><img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20">Gestion Asignatura</button></th>
             </tr>
             <tr class="contenido tabla1">
-                <th class="th" ><button  onclick="window.location.href='/my_school_app/inicio_sesion_funcional/lista_admin.php'" class="btn_tabla1"><img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20">Gestion Administrativos</button></th>
+                <th class="th" ><button  onclick="window.location.href='/my_school_app/lista_administrativo/lista_admin.php'" class="btn_tabla1"><img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20">Gestion Administrativos</button></th>
             </tr>
         </table>
         <!--tabla de gestion institucion-->

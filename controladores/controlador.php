@@ -6,7 +6,7 @@ session_start();
 if (!empty($_POST["btningresar"])){
     if (empty($_POST["usuario"]) and empty($_POST["contrasena"])) {
         echo '<div class="alert alert-danger">Los campos estan vacios</div>';
-        header("location:index.php");
+        header("location:../inicio_sesion/index.php");
         exit();
     } else {
         $usuario=$_POST["usuario"];
@@ -14,7 +14,7 @@ if (!empty($_POST["btningresar"])){
         $sql=$conexion->query(" select * from usuario where usuario='$usuario' and clave='$clave' ");
         if ($datos=$sql->fetch_object()) {
             $_SESSION["usuario"] = $_POST["usuario"];
-            header("location:interfazadmin.php");
+            header("location:../interfaz_administrativa/interfazadmin.php");
             exit();
 
         } else {
@@ -26,7 +26,7 @@ if (!empty($_POST["btningresar"])){
 
 /*cerrar sesion  */
 if (isset($_SESSION['usuario'])) {
-    header("Location: interfazadmin.php");
+    header("Location: ../interfaz_administrativa/interfazadmin.php");
     exit();
 }
 ?>

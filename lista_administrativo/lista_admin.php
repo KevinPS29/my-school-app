@@ -1,9 +1,28 @@
+<?php
+session_start();
+
+// Verifica si el usuario ha iniciado sesión
+if (!isset($_SESSION["usuario"])) {
+    // Usuario no autenticado, redirige al formulario de inicio de sesión
+    header("Location: ../inicio_sesion/index.php");
+    exit();
+}
+
+// Cerrar sesión cuando se hace clic en el boton cerrar sesion
+if (isset($_GET["cerrar_sesion"])) {
+    session_unset();
+    session_destroy();
+    header('Location: ../inicio_sesion/index.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../lista_docente/listadocentes.css">
+    <link rel="stylesheet" href="../lista_administrativo/admin.css">
     <!--bootstrap-->
       <link
       rel="stylesheet"
@@ -30,24 +49,35 @@
     />
     <title>Inicio</title>
 </head>
-<body class="container">
+    <body class="container">
+    <div class="loader"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- funcion para el cargue de la pagina -->
+    <script type="text/javascript">
+        $(window).load(function() {
+            $(".loader").fadeOut("slow");
+        });
+        </script>
     <!--borde superior-->
     <div class="bordesuperior">
         <div>
-            <img class="logo" src="../iconos/imagenes/escudo3.jpeg" width="80">
+               <a href="../interfaz_administrativa/interfazadmin.php">
+                <img  class="logo" src="../iconos/imagenes/escudo3.jpeg" width="80">
+               </a>
         </div>
         <div class="bordesuperior">
-            <a class="hover" href="../INICIO/index.html">Nosotros</a>
-            <a class="hover" href="../ASIGNATURA/asignatura.html">Asignaturas</a>
-            <a class="hover" href="../CALIFICACIONES/index.html">Calificaciones</a>
-            <a class="hover" href="../ASIGNATURA/asignatura.html">Soporte</a>
-            <a class="hover" href="usuario.html" class="usuario">Usuario</a>
+             
+            <a class="hover" href="../lista_docente/lista_docentes.php">Docente</a>
+            <a class="hover" href="../lista_estudiante/lista_estudiante.php">Estudiante</a>
+            <a class="hover" href="../lista_asignaturas/lista_asignaturas.php">Asignaturas</a>
+            <a class="hover" href="../soporte/soporte.php">Soporte</a>
+            <a class="hover"  class="usuario"><?php echo $_SESSION["usuario"]; ?></a>
             <div class="Dropdown">
                 <img class="configuracion" src="../iconos/imagenes/configuracion.jpeg" width="40">
                 <div class="Dropdown-content">
                     <a href="#">Ver perfil</a>
-                    <a href="#">configuración</a>
-                    <a href="#">Cerrar sesión</a>
+                    <a href="?cerrar_sesion">Cerrar sesión</a>
                 </div>
             </div>
         </div>
@@ -55,7 +85,7 @@
     <!--informacion del rol del usuario-->
     <div class="Informacion">
         <div>
-            <h5 href="usuario1.html" class="Actividades badge bg-primary text-wrap">Docentes</h5>
+            <h5 href="usuario1.html" class="Actividades badge bg-primary text-wrap">Administrativo</h5>
         </div>
         <div>
             <h1>Intitución Educativa Javier Cortés</h1>
@@ -70,7 +100,7 @@
             <div class="row">
                 <table >
                     <tr>
-                        <th colspan="7" class="titulo_tabla">LISTA DOCENTE</th>
+                        <th colspan="7" class="titulo_tabla">LISTA ADMINISTRATIVO</th>
                     </tr>
                 </table>
                 <table id="miTabla" class="table table-striped table-hover" style="width: 100%">
@@ -97,7 +127,7 @@
 
         <!--MODAL-->
         <dialog id="modal">
-            <h1 class="registro">Agregar nuevo docente</h1>
+            <h1 class="registro">Agregar nuevo administrativo</h1>
             <br>
             <form class="formRegistro" id="formulario" method="POST dialog">
                 <div class="grid">
@@ -174,7 +204,7 @@
                         src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
                     <!--bootstrap-->
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-                    <script src="../lista_docente/docentes.js"></script>
+                    <script src="../lista_administrativo/admin.js"></script>
 
 </body>
 
