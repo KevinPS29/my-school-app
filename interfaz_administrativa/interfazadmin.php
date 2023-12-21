@@ -46,8 +46,8 @@ if (isset($_GET["cerrar_sesion"])) {
                </a>
         </div>
         <div class="bordesuperior">
-            <a class="hover" href="../lista_docente/lista_docentes.php">Docente</a>
-            <a class="hover" href="../lista_estudiante/lista_estudiante.php">Estudiante</a>
+            <a class="hover" href="../listado_docente/listado_docente.php">Docente</a>
+            <a class="hover" href="../listado_estudiante/listado_estudiante.php">Estudiante</a>
             <a class="hover" href="../lista_asignaturas/lista_asignaturas.php">Asignaturas</a>
             <a class="hover" href="../lista_administrativo/lista_admin.php">Administrativos</a>
             <a class="hover" href="../soporte/soporte.php">Soporte</a>
@@ -77,10 +77,10 @@ if (isset($_GET["cerrar_sesion"])) {
                 <th class="titulo tabla1">Gestion Principal</th>
             </tr>
             <tr class="contenido tabla1">
-                <th class="th"> <button onclick="window.location.href='/my_school_app/lista_docente/lista_docentes.php'" class="btn_tabla1"><img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20"> Gestion Docente</button></th>
+                <th class="th"> <button onclick="window.location.href='/my_school_app/listado_docente/listado_docente.php'" class="btn_tabla1"><img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20"> Gestion Docente</button></th>
             </tr>
             <tr class="contenido tabla1">
-                <th class="th"><button onclick="window.location.href='/my_school_app/lista_estudiante/lista_estudiante.php'" class="btn_tabla1"> <img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20"> Gestion Estudiante</button></th>
+                <th class="th"><button onclick="window.location.href='/my_school_app/listado_estudiante/listado_estudiante.php'" class="btn_tabla1"> <img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20"> Gestion Estudiante</button></th>
             </tr>
             <tr class="contenido tabla1">
                 <th class="th"><button onclick="window.location.href='/my_school_app/lista_asignaturas/lista_asignaturas.php'" class="btn_tabla1"><img class="configuracion persona" src="../iconos/botones/PERSONA.png" width="20">Gestion Asignatura</button></th>

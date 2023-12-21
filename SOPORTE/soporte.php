@@ -48,8 +48,8 @@ if (isset($_GET["cerrar_sesion"])) {
         </div>
         <div class="bordesuperior">
              
-            <a class="hover" href="../lista_docente/lista_docentes.php">Docente</a>
-            <a class="hover" href="../lista_estudiante/lista_estudiante.php">Estudiante</a>
+            <a class="hover" href="../listado_docente/listado_docente.php">Docente</a>
+            <a class="hover" href="../listado_estudiante/listado_estudiante.php">Estudiante</a>
             <a class="hover" href="../lista_asignaturas/lista_asignaturas.php">Asignaturas</a>
             <a class="hover" href="../lista_administrativo/lista_admin.php">Administrativos</a>
             <a class="hover"  class="usuario"><?php echo $_SESSION["usuario"]; ?></a>

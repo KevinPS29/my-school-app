@@ -11,7 +11,7 @@ if (!empty($_POST["btningresar"])){
     } else {
         $usuario=$_POST["usuario"];
         $clave=$_POST["contrasena"];
-        $sql=$conexion->query(" select * from usuario where usuario='$usuario' and clave='$clave' ");
+        $sql=$conexion->query(" select * from persona where nombre='$usuario' and cedula='$clave' ");
         if ($datos=$sql->fetch_object()) {
             $_SESSION["usuario"] = $_POST["usuario"];
             header("location:../interfaz_administrativa/interfazadmin.php");
@@ -29,5 +29,6 @@ if (isset($_SESSION['usuario'])) {
     header("Location: ../interfaz_administrativa/interfazadmin.php");
     exit();
 }
-?>
 
+
+?>

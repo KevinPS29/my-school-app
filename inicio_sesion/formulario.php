@@ -1,28 +1,10 @@
-<?php
-session_start();
-
-// Verifica si el usuario ha iniciado sesión
-if (!isset($_SESSION["usuario"])) {
-    // Usuario no autenticado, redirige al formulario de inicio de sesión
-    header("Location: ../inicio_sesion/index.php");
-    exit();
-}
-
-// Cerrar sesión cuando se hace clic en el boton cerrar sesion
-if (isset($_GET["cerrar_sesion"])) {
-    session_unset();
-    session_destroy();
-    header('Location: ../inicio_sesion/index.php');
-    exit();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../lista_docente/listadocentes.css">
+    <link rel="stylesheet" href="../lista_administrativo/admin.css">
     <!--bootstrap-->
       <link
       rel="stylesheet"
@@ -67,11 +49,11 @@ if (isset($_GET["cerrar_sesion"])) {
                </a>
         </div>
         <div class="bordesuperior">
-            <a class="hover" href="../lista_estudiante/lista_estudiante.php">Estudiante</a>
+             
+            <a class="hover" href="../listado_docente/listado_docente.php">Docente</a>
+            <a class="hover" href="../listado_estudiante/listado_estudiante.php">Estudiante</a>
             <a class="hover" href="../lista_asignaturas/lista_asignaturas.php">Asignaturas</a>
-            <a class="hover" href="../lista_administrativo/lista_admin.php">Administrativos</a>
             <a class="hover" href="../soporte/soporte.php">Soporte</a>
-            <a class="hover"  class="usuario"><?php echo $_SESSION["usuario"]; ?></a>
             <div class="Dropdown">
                 <img class="configuracion" src="../iconos/imagenes/configuracion.jpeg" width="40">
                 <div class="Dropdown-content">
@@ -84,7 +66,7 @@ if (isset($_GET["cerrar_sesion"])) {
     <!--informacion del rol del usuario-->
     <div class="Informacion">
         <div>
-            <h5 href="usuario1.html" class="Actividades badge bg-primary text-wrap">Docentes</h5>
+            <h5 href="usuario1.html" class="Actividades badge bg-primary text-wrap">Administrativo</h5>
         </div>
         <div>
             <h1>Intitución Educativa Javier Cortés</h1>
@@ -99,7 +81,7 @@ if (isset($_GET["cerrar_sesion"])) {
             <div class="row">
                 <table >
                     <tr>
-                        <th colspan="7" class="titulo_tabla">LISTA DOCENTE</th>
+                        <th colspan="7" class="titulo_tabla">LISTA ADMINISTRATIVO</th>
                     </tr>
                 </table>
                 <table id="miTabla" class="table table-striped table-hover" style="width: 100%">
@@ -118,33 +100,34 @@ if (isset($_GET["cerrar_sesion"])) {
                             <th>Email</th>
                             <th>opciones</th>
                         </tr>
+
                     </thead>
-                    <tbody id="table_users"></tbody>                    
+                    <tbody id="table_users">
+                    </tbody>                    
                 </table>
             </div>
         </div>
 
         <!--MODAL-->
         <dialog id="modal">
-            <h1 class="registro">Agregar nuevo docente</h1>
+            <h1 class="registro">Agregar nuevo administrativo</h1>
             <br>
-            <form class="formRegistro" id="formulario" method="POST dialog">
+            <form class="formRegistro" id="formulario" method="POST" action="almacenamiento.php">
                 <div class="grid">
                     <!--dentro de cada label ingresamos los input para que las cajas queden dentro de la misma celda de las grillas-->
                     <div class="ladoIz">
                             <label for="CEDULA" class="FIL1">CEDULA:</label>
-                            <br><input placeholder="CEDULA" class="form CEDULA" type="number" id="cedula"
-                            name="int_CEDULA" />
+                            <br><input placeholder="CEDULA" class="form CEDULA" type="number" id="cedula" name="cedula" />
                     </div>
                     <div class="ladoDr">
                         <label for="nombre" class="FIL1">NOMBRES:</label>
                         <br><input placeholder="NOMBRES" class="form NOMBRES" type="text" id="nombre"
-                            name="txt_NOMBRES" required />
+                            name="nombre" required />
                     </div>
                     <div class="ladoIz">
                         <label for="APELLIDOS">APELLIDOS:</label>
                         <br><input placeholder="APELLIDOS" class="form APELLIDOS" type="text" id="apellidos"
-                            name="txt_APELLIDOS" required />
+                            name="apellidos" required />
                     </div>
                     <div class="ladoDr">
                         <label for="direccion">DIRECCION:</label>
@@ -158,12 +141,12 @@ if (isset($_GET["cerrar_sesion"])) {
                     <div class="ladoDr">
                         <label for="EMAIL">E-MAIL:</label>
                         <br><input placeholder="EMAIL" class="form EMAIL" type="email" id="email"
-                            name="txt_EMAIL" />
+                            name="email" />
                     </div>
                 </div>
                 <br>
                 <div class="d-grid gap-2 col-2 mx-auto">
-                    <button class="btn btn-primary" type="button"" id="btn-cerrar-modal" onclick="agregarOEditar()">Registrar/Editar</button>
+                    <button class="btn btn-primary" type="submit"" id="btn-cerrar-modal" name="registrarse" onclick="agregarOEditar()">Registrar/Editar</button>
                 </div>
             </form>
         </dialog>
@@ -203,7 +186,7 @@ if (isset($_GET["cerrar_sesion"])) {
                         src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
                     <!--bootstrap-->
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-                    <script src="../lista_docente/docentes.js"></script>
+                    <script src="../lista_administrativo/admin.js"></script>
 
 </body>
 

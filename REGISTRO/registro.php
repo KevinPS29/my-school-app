@@ -19,12 +19,12 @@
     <div>
       <h1 class="registro">Registro</h1>
     </div>
-    <form id="formulario" method="POST">
+    <form id="formulario" method="POST" action="almacenamiento.php">
       <div class="grid">
         <!--dentro de cada label ingresamos los input para que las cajas queden dentro de la misma celda de las grillas-->
         <div class="ladoIz">
         <label for="NOMBRES" class="FIL1" >NOMBRES:</label>
-        <br><input placeholder="NOMBRES" class="form NOMBRES" type="text" id="txt_NOMBRES" name="txt_NOMBRES" required/>
+        <br><input placeholder="NOMBRES" class="form NOMBRES" type="text" id="txt_NOMBRES" name="nombre" required/>
         </div>
         <div>
         <label for="APELLIDOS" >APELLIDOS:</label>
@@ -32,7 +32,7 @@
         </div>
         <div class="ladoIz">
         <label for="CEDULA" class="FIL1">CEDULA:</label>
-        <br><input placeholder="CEDULA" class="form CEDULA" type="number" id="int_CEDULA" name="int_CEDULA" />
+        <br><input placeholder="CEDULA" class="form CEDULA" type="number" id="int_CEDULA" name="cedula" />
         </div>
         <div>
         <label for="CONTRASEÑA">CONTRASEÑA:</label>
@@ -53,7 +53,7 @@
       </div>
       <br>
       <div class="d-grid gap-2 col-2 mx-auto">
-        <button class="btn btn-primary" type="submit"">Registrarse</button>
+        <button class="btn btn-primary" type="submit">Registrarse</button>
       </div>
   </form>
   </body>

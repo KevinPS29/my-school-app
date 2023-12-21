@@ -11,7 +11,12 @@ body {
 
 }
 
-/*icono de carga de pagina*/
+/* se redondea el icono de la App*/
+.schoolapp, .configuracion {
+    border-radius: 225px;
+    margin: 0;
+    opacity: 80%;
+}
 
 .loader {
     width: 60px;
@@ -174,6 +179,7 @@ footer{
     text-decoration: none;
     transition: 0.2s;
 }
+
 .hover:hover{
     font-weight: bolder;
 }

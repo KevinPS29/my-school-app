@@ -52,7 +52,7 @@
                 </div>
                 <div class="buttons-registers">
                     <button class="btn btn-primary float-start" type="button">¿Olvido su contraseña?</button>
-                    <button onclick="window.location.href='../REGISTRO/registro.html';" class="btn btn-primary float-end" type="button">Registrarse</button>
+                    <button onclick="window.location.href='../registro/registro.php'" class="btn btn-primary float-end" type="button">Registrarse</button>
                     <br><br>
                     <button class="btn btn-primary float-start" type="button">Ayuda</button>
                 </div>

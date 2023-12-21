@@ -1,20 +1,21 @@
 <?php
-session_start();
+    session_start();
 
-// Verifica si el usuario ha iniciado sesión
-if (!isset($_SESSION["usuario"])) {
-    // Usuario no autenticado, redirige al formulario de inicio de sesión
-    header("Location: ../inicio_sesion/index.php");
-    exit();
-}
+    // Verifica si el usuario ha iniciado sesión
+    if (!isset($_SESSION["usuario"])) {
+        // Usuario no autenticado, redirige al formulario de inicio de sesión
+        header("Location: ../inicio_sesion/index.php");
+        exit();
+    }
 
-// Cerrar sesión cuando se hace clic en el boton cerrar sesion
-if (isset($_GET["cerrar_sesion"])) {
-    session_unset();
-    session_destroy();
-    header('Location: ../inicio_sesion/index.php');
-    exit();
-}
+    // Cerrar sesión cuando se hace clic en el boton cerrar sesion
+    if (isset($_GET["cerrar_sesion"])) {
+        session_unset();
+        session_destroy();
+        header('Location: ../inicio_sesion/index.php');
+        exit();
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +45,8 @@ if (isset($_GET["cerrar_sesion"])) {
                </a>
         </div>
         <div class="bordesuperior">
-            <a class="hover" href="../lista_docente/lista_docentes.php">Docente</a>
-            <a class="hover" href="../lista_estudiante/lista_estudiante.php">Estudiante</a>
+            <a class="hover" href="../listado_docente/listado_docente.php">Docente</a>
+            <a class="hover" href="../listado_estudiante/listado_estudiante.php">Estudiante</a>
             <a class="hover" href="../lista_administrativo/lista_admin.php">Administrativos</a>
             <a class="hover" href="../soporte/soporte.php">Soporte</a>
             <a class="hover"  class="usuario"><?php echo $_SESSION["usuario"]; ?></a>
@@ -108,3 +109,4 @@ if (isset($_GET["cerrar_sesion"])) {
     
     </body>
 </html>
+

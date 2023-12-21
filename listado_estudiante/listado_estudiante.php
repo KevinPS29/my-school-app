@@ -15,14 +15,23 @@ if (isset($_GET["cerrar_sesion"])) {
     header('Location: ../inicio_sesion/index.php');
     exit();
 }
+    $servidor="localhost";
+    $usuario="root";
+    $clave="";
+    $baseDeDatos="kevis";
+    $conexion = mysqli_connect($servidor, $usuario, $clave, $baseDeDatos);
+    if(!$conexion){
+        echo"Error en la conexion con el servidor";
+    }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../lista_estudiante/estudiante.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../listado_estudiante/listado_estudiante.css">
     <!--bootstrap-->
       <link
       rel="stylesheet"
@@ -68,7 +77,7 @@ if (isset($_GET["cerrar_sesion"])) {
         </div>
         <div class="bordesuperior">
              
-            <a class="hover" href="../lista_docente/lista_docentes.php">Docente</a>
+            <a class="hover" href="../listado_docente/listado_docente.php">Docente</a>
             <a class="hover" href="../lista_asignaturas/lista_asignaturas.php">Asignaturas</a>
             <a class="hover" href="../lista_administrativo/lista_admin.php">Administrativos</a>
             <a class="hover" href="../soporte/soporte.php">Soporte</a>
@@ -85,7 +94,7 @@ if (isset($_GET["cerrar_sesion"])) {
     <!--informacion del rol del usuario-->
     <div class="Informacion">
         <div>
-            <h5 href="usuario1.html" class="Actividades badge bg-primary text-wrap">Estudiantes</h5>
+            <h5 href="usuario1.html" class="Actividades badge bg-primary text-wrap">Administrativo</h5>
         </div>
         <div>
             <h1>Intitución Educativa Javier Cortés</h1>
@@ -95,86 +104,47 @@ if (isset($_GET["cerrar_sesion"])) {
             </h6>
         </div>
     </div>
+    
         <!--tabla docente-->
          <div class="container my-5">
             <div class="row">
                 <table >
                     <tr>
-                        <th colspan="7" class="titulo_tabla">LISTA ESTUDIANTE</th>
+                        <th colspan="8" class="titulo_tabla">LISTADO ESTUDIANTE</th>
                     </tr>
                 </table>
                 <table id="miTabla" class="table table-striped table-hover" style="width: 100%">
                     <thead >
                         <tr >
-                            <th colspan="7" class="nuevo_usuario">
-                                <button class="boton" id="btn-abrir-modal">+Nuevo</button>
+                            <th colspan="8" class="nuevo_usuario">
+                                <button class="boton" onclick="window.location.href='/my_school_app/listado_estudiante/registro_estudiante.php'" >+Nuevo</button> <!--id="btn-abrir-modal"-->
                             </th>
                         </tr>
-                        <tr id= "fila">
-                            <th>Documento</th>
-                            <th>Nombres</th>
+                        <tr>
+                            <th>cedula</th>
+                            <th>Nombre</th>
                             <th>Apellidos</th>
                             <th>Direccion</th>
                             <th>Telefono</th>
                             <th>Email</th>
-                            <th>opciones</th>
+                            <th colspan="2">Acciones</th>
                         </tr>
+
                     </thead>
-                    <tbody id="table_users"></tbody>                    
+                        <tbody>
+                        <!-- Las filas se agregarán o editarán dinámicamente mediante JavaScript -->
+                        </tbody>               
                 </table>
             </div>
         </div>
 
-        <!--MODAL-->
-        <dialog id="modal">
-            <h1 class="registro">Agregar nuevo estudiante</h1>
-            <br>
-            <form class="formRegistro" id="formulario" method="POST dialog">
-                <div class="grid">
-                    <!--dentro de cada label ingresamos los input para que las cajas queden dentro de la misma celda de las grillas-->
-                    <div class="ladoIz">
-                            <label for="CEDULA" class="FIL1">CEDULA:</label>
-                            <br><input placeholder="CEDULA" class="form CEDULA" type="number" id="cedula"
-                            name="int_CEDULA" />
-                    </div>
-                    <div class="ladoDr">
-                        <label for="nombre" class="FIL1">NOMBRES:</label>
-                        <br><input placeholder="NOMBRES" class="form NOMBRES" type="text" id="nombre"
-                            name="txt_NOMBRES" required />
-                    </div>
-                    <div class="ladoIz">
-                        <label for="APELLIDOS">APELLIDOS:</label>
-                        <br><input placeholder="APELLIDOS" class="form APELLIDOS" type="text" id="apellidos"
-                            name="txt_APELLIDOS" required />
-                    </div>
-                    <div class="ladoDr">
-                        <label for="direccion">DIRECCION:</label>
-                        <br><input placeholder="DIRECCION" class="form direccion" type="text" id="direccion"
-                            name="direccion" />
-                    </div>
-                    <div class="ladoIz">
-                        <label for="TELEFONO" class="FIL1 TELEFONO">TELEFONO:</label>
-                        <br><input placeholder="TELEFONO" class="form telefono" type="number" id="telefono" name="telefono" />
-                    </div>
-                    <div class="ladoDr">
-                        <label for="EMAIL">E-MAIL:</label>
-                        <br><input placeholder="EMAIL" class="form EMAIL" type="email" id="email"
-                            name="txt_EMAIL" />
-                    </div>
-                </div>
-                <br>
-                <div class="d-grid gap-2 col-2 mx-auto">
-                    <button class="btn btn-primary" type="button"" id="btn-cerrar-modal" onclick="agregarOEditar()">Registrar/Editar</button>
-                </div>
-            </form>
-        </dialog>
             <!--borde inferior-->
 
     <footer>
         <img class=" schoolapp" src="../iconos/imagenes/my_scholl_app.jpeg" width="60" />
                     <p class="copy">Copyright 2023</p>
                     </footer>
-
+                    <script src="script.js"></script>
                     <!--jquery-->
                     <script 
                         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -204,8 +174,27 @@ if (isset($_GET["cerrar_sesion"])) {
                         src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
                     <!--bootstrap-->
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-                    <script src="../lista_estudiante/estudiante.js"></script>
-
 </body>
 
 </html>
+<?php
+   /* if(isset($_POST['registrarse'])){
+        $cedula=$_POST['cedula']; 
+        $nombre=$_POST['nombre'];
+        $apellido=$_POST['apellido'];
+        $direccion=$_POST['direccion'];
+        $telefono=$_POST['telefono'];
+        $correo=$_POST['email'];
+
+        //$sexo=$_POST['sexo'];
+        //para que genere numeros aleatorios
+        //$id=rand(1,99);
+        
+        $insertarDatos="INSERT INTO datos VALUES('$cedula', '$nombre', '$apellido', '$direccion', '$correo', '$telefono')";
+        $ejecutarInsertar = mysqli_query($conexion, $insertarDatos);
+
+        if(!$ejecutarInsertar){
+            echo"Error en la linea sql";
+        }
+    }
+*/?>

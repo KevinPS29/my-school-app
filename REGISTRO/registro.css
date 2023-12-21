@@ -5,19 +5,76 @@ blanco #FAFAFA, GRIS #C7EEFF, AZUL #0077C0, NEGRO #1D242B
 body {
     background-image: linear-gradient(to top,black,#aa9eef);
     color: white;
-    height: 707px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
+
+/* se redondea el icono de la App*/
+.schoolapp, .configuracion {
+    border-radius: 225px;
+    margin: 0;
+    opacity: 80%;
+}
+
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: spin 1.2s
+        linear infinite;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+}
+
+.loader::before {
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(0deg,
+        #f0c 0%,
+        #80f 100%);
+}
+.loader::after {
+    width: 85%;
+    height: 85%;
+    background-color: #222;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /*estilo del icono y nombre de la App
 se utiliza FLEXBOX para que queden en una sola columna
 */
 .bordesuperior {
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
 }
 
 /* se redondea el icono de la App*/
-.schoolapp {
+.schoolapp, .configuracion {
     border-radius: 225px;
+    margin: 0;
+    opacity: 80%;
 }
 
 /*opacidad al pasar el mouse*/
@@ -25,15 +82,91 @@ se utiliza FLEXBOX para que queden en una sola columna
     opacity: 90%;
 }
 
-/*alinear a la izquierda My school APP*/
-.Nombre_de_app {
-    margin-left: auto;
+.logo {
+    border-radius: 225px;
 }
 
-/*opacidad al pasar el mouse*/
-.Nombre_de_app:hover {
-    opacity: 80%;
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    display: grid;
+    place-content: center;
 }
+
+.usuario{
+    font-weight: bold;
+}
+
+
+/*estilo al boton de Cursos*/
+.Dropdown-btn {
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    place-content: center;
+}
+
+.Dropdown {
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+
+.Dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    margin-top: 70px;
+    min-width: 80px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0,0.2);
+}
+
+.Dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+}
+
+.Dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.Dropdown:hover .Dropdown-btn {
+    font-weight: bolder;
+}
+
+.Dropdown:hover .Dropdown-content {
+    display: block;
+}
+
+.boton{
+    font-weight: bolder;
+    border-radius: 8px;
+    background-color: blueviolet;
+    color: white;
+}
+
+footer{
+    margin-top: 7%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:  space-between;
+}
+
+.hover{
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.hover:hover{
+    font-weight: bolder;
+}
+
+
 
 /*alinear registro y tamaño de letra*/
 .registro {
@@ -102,4 +235,9 @@ se utiliza FLEXBOX para que queden en una sola columna
 
 .ladoIz {
     justify-self: end;
+}
+
+/*copyright*/
+.copy {
+    color: blue;
 }
