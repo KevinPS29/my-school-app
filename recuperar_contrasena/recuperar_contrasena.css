@@ -5,18 +5,10 @@ blanco #FAFAFA, GRIS #C7EEFF, AZUL #0077C0, NEGRO #1D242B
 body {
     background-image: linear-gradient(to top,black,#aa9eef);
     color: white;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
 
 }
 
-/* se redondea el icono de la App*/
-.schoolapp, .configuracion {
-    border-radius: 225px;
-    margin: 0;
-    opacity: 80%;
-}
+/*icono de carga de pagina*/
 
 .loader {
     width: 60px;
@@ -159,13 +151,6 @@ a {
     display: block;
 }
 
-.boton{
-    font-weight: bolder;
-    border-radius: 8px;
-    background-color: blueviolet;
-    color: white;
-}
-
 footer{
     margin-top: 7%;
     display: flex;
@@ -184,100 +169,26 @@ footer{
     font-weight: bolder;
 }
 
-.btn-sm{
-    margin-right: 0px;
-    align-self: center;
-}
-
-.opciones{
-    text-align: center;
-    padding: 0%;
-}
-
-/*Modal*/
-
-#modal-insertar::backdrop{
-    background-color: rgba(0, 0, 0, .55)
-}
-
-#modal-editar::backdrop{
-    background-color: rgba(0, 0, 0, .55)
-}
-
-#modal-insertar, #modal-editar{
-    background-color: #0077C0;
-    width: 50%;
-    border-radius: 10px;
-}
-
-
-/*alinear registro y tamaño de letra*/
-.registro {
-    text-align: center;
-    font-size: 30px;
-}
-
-/*configuracion de formulario usando celdas de grilla*/
-.grid {
-    display: grid;
-    grid-template-rows: [row-1] 50px [row-2] 50px [row-3] 50px [row-4] 1fr;
-    grid-template-columns: [col-1] 50% [col-2] 50%;
-    grid-gap: 30px 30px;
-    /*Para separar cada selda de la grilla de la fila y columna*/
-    font-size: 13.5px;
-    /*tamaño de letra*/
-    font-weight: bold;
-    /*negrilla*/
-}
-
-.ladoDr{
-    width: 300px;
-    height: 80px;
-}
-
-/*estilo a los formularios */
-.form {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    width: 250px;
-    padding: 12px 10px;
-    margin: 8px 0;
-    border-style: none;
-    box-sizing: border-box;
-    /*ajusta las cajas a la pantalla*/
-    border-radius: 4px;
-}
-
-/*estilo al formulario al pasar el mouse*/
-.form:hover {
-    border: 1px solid #ccc;
-}
-
-/*ajusta el tamaño de la letra y negrilla del boton*/
-.btn {
-    font-size: 20px;
+/*ajustar los terminos y condiciones*/
+.a {
+    padding-left: 5px;
     font-weight: bold;
 }
 
-.ladoIz {
-    justify-self: end;
-    height: 80px;
-}
-/*copyright*/
-.copy {
-    color: blue;
-}
+/*formulario contactenos*/
 
-/*configuracion titulo de la tabla*/
-
-.titulo_tabla{
-    background-color: blueviolet;
+.header {
+    color: black;
+    font-size: 27px;
+    font-weight: bolder;
     padding: 10px;
-    text-align: center;
 }
 
-.table{
-    border-style: none;
-    border-radius: 4px;
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
+
+.form-group {
+    margin: 10px;
 }

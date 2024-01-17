@@ -1,28 +1,9 @@
-<?php
-session_start();
-
-// Verifica si el usuario ha iniciado sesión
-if (!isset($_SESSION["usuario"])) {
-    // Usuario no autenticado, redirige al formulario de inicio de sesión
-    header("Location: ../inicio_sesion/index.php");
-    exit();
-}
-
-// Cerrar sesión cuando se hace clic en el boton cerrar sesion
-if (isset($_GET["cerrar_sesion"])) {
-    session_unset();
-    session_destroy();
-    header('Location: ../inicio_sesion/index.php');
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="soporte.css">
+    <link rel="stylesheet" href="recuperar_contrasena.css">
     <!--bootstrap-->
       <link
       rel="stylesheet"
@@ -46,13 +27,12 @@ if (isset($_GET["cerrar_sesion"])) {
                 <img  class="logo" src="../iconos/imagenes/escudo3.jpeg" width="80">
                </a>
         </div>
-        <div class="bordesuperior">
+        <!-- <div class="bordesuperior">
              
             <a class="hover" href="../listado_docente/listado_docente.php">Docente</a>
             <a class="hover" href="../listado_estudiante/listado_estudiante.php">Estudiante</a>
             <a class="hover" href="../lista_asignaturas/lista_asignaturas.php">Asignaturas</a>
             <a class="hover" href="../listado_administrativo/listado_administrativo.php">Administrativos</a>
-            <a class="hover"  class="usuario"><?php echo $_SESSION["usuario"]; ?></a>
             <div class="Dropdown">
                 <img class="configuracion" src="../iconos/imagenes/configuracion.jpeg" width="40">
                 <div class="Dropdown-content">
@@ -60,7 +40,7 @@ if (isset($_GET["cerrar_sesion"])) {
                     <a href="?cerrar_sesion">Cerrar sesión</a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="container">

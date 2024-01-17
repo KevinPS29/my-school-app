@@ -1,0 +1,107 @@
+:root {
+    --bg-color:  rgb(28, 28, 27);
+    --second-bg-color: #1d242b;
+    --text-color: #fafafa;
+    --main-color: #0077c0;
+}
+
+body {
+    background-image: linear-gradient(to top,black,#aa9eef);
+    color: white;
+}
+
+
+/*icono de carga de pagina*/
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: spin 1.2s
+        linear infinite;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+}
+
+.loader::before {
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(0deg,
+        #f0c 0%,
+        #80f 100%);
+}
+.loader::after {
+    width: 85%;
+    height: 85%;
+    background-color: #222;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.row{
+    height: 647px;
+}
+
+
+.align-item {
+    display: flex;
+    padding: 0;
+}
+
+.login {
+    padding: 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 500px;
+    margin-top: 60px;
+}
+
+button {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border-radius: 5px;
+
+}
+
+.entrar {
+    width: 250px;
+}
+
+.buttons-registers {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+
+.logo_rounded {
+    border-radius: 20%;
+}
+
+.text-white{
+    font-weight: bolder;
+}
+
+footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:  space-between;
+}
+
+.schoolapp{
+    border-radius: 50%;
+}

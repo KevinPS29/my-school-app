@@ -4,7 +4,7 @@ session_start();
 // Verifica si el usuario ha iniciado sesión
 if (!isset($_SESSION["usuario"])) {
     // Usuario no autenticado, redirige al formulario de inicio de sesión
-    header("Location: ../inicio_sesion/index.php");
+    header("Location: ../inicio_sesion_rol/index.php");
     exit();
 }
 
@@ -12,7 +12,7 @@ if (!isset($_SESSION["usuario"])) {
 if (isset($_GET["cerrar_sesion"])) {
     session_unset();
     session_destroy();
-    header('Location: ../inicio_sesion/index.php');
+    header('Location: ../inicio_sesion_rol/index.php');
     exit();
 }
     $servidor="localhost";
@@ -78,7 +78,7 @@ if (isset($_GET["cerrar_sesion"])) {
         <div class="bordesuperior">
             <a class="hover" href="../listado_estudiante/listado_estudiante.php">Estudiante</a>
             <a class="hover" href="../lista_asignaturas/lista_asignaturas.php">Asignaturas</a>
-            <a class="hover" href="../lista_administrativo/lista_admin.php">Administrativos</a>
+            <a class="hover" href="../listado_administrativo/listado_administrativo.php">Administrativos</a>
             <a class="hover" href="../soporte/soporte.php">Soporte</a>
             <a class="hover"  class="usuario"><?php echo $_SESSION["usuario"]; ?></a>
             <div class="Dropdown">
@@ -104,19 +104,124 @@ if (isset($_GET["cerrar_sesion"])) {
         </div>
     </div>
     
+    <div>
+                                        <!--MODAL INSERTAR-->
+        <dialog id="modal-insertar">
+            <h1 class="registro">Agregar nuevo docente</h1>
+            <br>
+            <form id="formulario" method="POST" action="/my_school_app/listado_docente/almacenamiento_docente.php">
+                <div class="grid">
+                    <!--dentro de cada label ingresamos los input para que las cajas queden dentro de la misma celda de las grillas-->
+                    <div class="ladoIz">
+                         <label for="CEDULA" class="FIL1">CEDULA:</label>
+                         <br><input placeholder="CEDULA" class="form CEDULA" type="number" id="cedula"
+                            name="cedula" />
+                    </div>
+                    <div class="ladoDr">
+                        <label for="nombre" class="FIL1">NOMBRES:</label>
+                        <br><input placeholder="nombre" class="form NOMBRES" type="text" id="nombre"
+                            name="nombre" required />
+                    </div>
+                    <div class="ladoIz">
+                        <label for="APELLIDOS">APELLIDOS:</label>
+                        <br><input placeholder="apellido" class="form APELLIDOS" type="text" id="apellido"
+                            name="apellido" required />
+                    </div>
+                    <div class="ladoDr">
+                        <label for="direccion">DIRECCION:</label>
+                        <br><input placeholder="direccion" class="form direccion" type="text" id="direccion"
+                            name="direccion" />
+                    </div>
+                    <div class="ladoIz">
+                        <label for="TELEFONO" class="FIL1 TELEFONO">TELEFONO:</label>
+                        <br><input placeholder="telefono" class="form telefono" type="number" id="telefono" name="telefono" />
+                    </div>
+                    <div class="ladoDr">
+                        <label for="EMAIL">E-MAIL:</label>
+                        <br><input placeholder="email" class="form email" type="email" id="email"
+                            name="email" />
+                    </div>
+                </div>
+                <br>
+                <div class="d-grid gap-2 col-2 mx-auto">
+                <button class="btn btn-primary" type="submit" >Registrar</button>
+
+                    <!-- <button class="btn btn-primary" type="button"" id="btn-cerrar-modal" onclick="agregarOEditar()">Registrar/Editar</button> -->
+                </div>
+            </form>
+          
+        </dialog>
+                            </div>
+
+           <!--MODAL EDITAR-->
+           <div>
+           <dialog id="modal-editar">
+            <h1 class="registro">Editar docente</h1>
+            <br>
+            <form id="formulario" method="POST" action="/my_school_app/listado_docente/editar_docente.php">
+                <div class="grid">
+                    <!--dentro de cada label ingresamos los input para que las cajas queden dentro de la misma celda de las grillas-->
+                    <div class="ladoIz">
+                         <label for="CEDULA" class="FIL1">CEDULA:</label>
+                         <br><input placeholder="CEDULA" class="form CEDULA" type="number" id="cedula-editable" 
+                            name="cedula" readonly  />
+                    </div>
+                    <div class="ladoDr">
+                        <label for="nombre" class="FIL1">NOMBRES:</label>
+                        <br><input placeholder="nombre" class="form NOMBRES" type="text" id="nombre-editable"
+                            name="nombre" required />
+                    </div>
+                    <div class="ladoIz">
+                        <label for="APELLIDOS">APELLIDOS:</label>
+                        <br><input placeholder="apellido" class="form APELLIDOS" type="text" id="apellido-editable"
+                            name="apellido" required />
+                    </div>
+                    <div class="ladoDr">
+                        <label for="direccion">DIRECCION:</label>
+                        <br><input placeholder="direccion" class="form direccion" type="text" id="direccion-editable"
+                            name="direccion" required/>
+                    </div>
+                    <div class="ladoIz">
+                        <label for="TELEFONO" class="FIL1 TELEFONO">TELEFONO:</label>
+                        <br><input placeholder="telefono" class="form telefono" type="number" id="telefono-editable" name="telefono" required/>
+                    </div>
+                    <div class="ladoDr">
+                        <label for="EMAIL">E-MAIL:</label>
+                        <br><input placeholder="email" class="form email" type="email" id="email-editable"
+                            name="email" />
+                    </div>
+                </div>
+                <br>
+                <div class="d-grid gap-2 col-2 mx-auto">
+                <button class="btn btn-primary" type="submit" >Guardar</button>
+
+                    <!-- <button class="btn btn-primary" type="button"" id="btn-cerrar-modal" onclick="agregarOEditar()">Registrar/Editar</button> -->
+                </div>
+            </form>
+          
+        </dialog>
+                            </div>
+
+
         <!--tabla docente-->
          <div class="container my-5">
             <div class="row">
+
+
                 <table >
                     <tr>
                         <th colspan="8" class="titulo_tabla">LISTADO DOCENTE</th>
                     </tr>
+
                 </table>
                 <table id="miTabla" class="table table-striped table-hover" style="width: 100%">
                     <thead >
                         <tr >
                             <th colspan="8" class="nuevo_usuario">
-                                <button class="boton" onclick="window.location.href='/my_school_app/listado_docente/registro_docente.php'" >+Nuevo</button> <!--id="btn-abrir-modal"-->
+                            <button class="boton" id="btn-abrir-modal-insertar">+Nuevo</button>
+
+                                <!-- <button class="boton" onclick="window.location.href='/my_school_app/listado_docente/registro_docente.php'" >+Nuevo</button> -->
+                    
                             </th>
                         </tr>
                         <tr>
@@ -143,7 +248,7 @@ if (isset($_GET["cerrar_sesion"])) {
         <img class=" schoolapp" src="../iconos/imagenes/my_scholl_app.jpeg" width="60" />
                     <p class="copy">Copyright 2023</p>
                     </footer>
-                    <script src="script.js"></script>
+                    <script src="../listado_docente/script_docente.js"></script>
                     <!--jquery-->
                     <script 
                         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -176,24 +281,3 @@ if (isset($_GET["cerrar_sesion"])) {
 </body>
 
 </html>
-<?php
-   /* if(isset($_POST['registrarse'])){
-        $cedula=$_POST['cedula']; 
-        $nombre=$_POST['nombre'];
-        $apellido=$_POST['apellido'];
-        $direccion=$_POST['direccion'];
-        $telefono=$_POST['telefono'];
-        $correo=$_POST['email'];
-
-        //$sexo=$_POST['sexo'];
-        //para que genere numeros aleatorios
-        //$id=rand(1,99);
-        
-        $insertarDatos="INSERT INTO datos VALUES('$cedula', '$nombre', '$apellido', '$direccion', '$correo', '$telefono')";
-        $ejecutarInsertar = mysqli_query($conexion, $insertarDatos);
-
-        if(!$ejecutarInsertar){
-            echo"Error en la linea sql";
-        }
-    }
-*/?>

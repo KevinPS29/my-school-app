@@ -31,7 +31,7 @@ if (isset($_GET["cerrar_sesion"])) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../listado_estudiante/listado_estudiante.css">
+    <link rel="stylesheet" href="../listado_administrativo/listado_administrativo.css">
     <!--bootstrap-->
       <link
       rel="stylesheet"
@@ -76,9 +76,9 @@ if (isset($_GET["cerrar_sesion"])) {
                </a>
         </div>
         <div class="bordesuperior">
-            <a class="hover" href="../listado_docente/listado_docente.php">Docente</a>
+            <a class="hover" href="../listado_estudiante/listado_estudiante.php">Estudiante</a>
             <a class="hover" href="../lista_asignaturas/lista_asignaturas.php">Asignaturas</a>
-            <a class="hover" href="../listado_administrativo/listado_administrativo.php">Administrativos</a>
+            <a class="hover" href="../listado_docente/listado_docente.php">Docente</a>
             <a class="hover" href="../soporte/soporte.php">Soporte</a>
             <a class="hover"  class="usuario"><?php echo $_SESSION["usuario"]; ?></a>
             <div class="Dropdown">
@@ -107,9 +107,9 @@ if (isset($_GET["cerrar_sesion"])) {
     <div>
                                         <!--MODAL INSERTAR-->
         <dialog id="modal-insertar">
-            <h1 class="registro">Agregar nuevo estudiante</h1>
+            <h1 class="registro">Agregar nuevo administrativo</h1>
             <br>
-            <form id="formulario" method="POST" action="/my_school_app/listado_estudiante/almacenamiento_estudiante.php">
+            <form id="formulario" method="POST" action="/my_school_app/listado_administrativo/almacenamiento_administrativo.php">
                 <div class="grid">
                     <!--dentro de cada label ingresamos los input para que las cajas queden dentro de la misma celda de las grillas-->
                     <div class="ladoIz">
@@ -156,9 +156,9 @@ if (isset($_GET["cerrar_sesion"])) {
            <!--MODAL EDITAR-->
            <div>
            <dialog id="modal-editar">
-            <h1 class="registro">Editar estudiante</h1>
+            <h1 class="registro">Editar administrador</h1>
             <br>
-            <form id="formulario" method="POST" action="/my_school_app/listado_estudiante/editar_estudiante.php">
+            <form id="formulario" method="POST" action="/my_school_app/listado_administrativo/editar_administrativo.php">
                 <div class="grid">
                     <!--dentro de cada label ingresamos los input para que las cajas queden dentro de la misma celda de las grillas-->
                     <div class="ladoIz">
@@ -195,7 +195,6 @@ if (isset($_GET["cerrar_sesion"])) {
                 <div class="d-grid gap-2 col-2 mx-auto">
                 <button class="btn btn-primary" type="submit" >Guardar</button>
 
-                    <!-- <button class="btn btn-primary" type="button"" id="btn-cerrar-modal" onclick="agregarOEditar()">Registrar/Editar</button> -->
                 </div>
             </form>
           
@@ -203,14 +202,14 @@ if (isset($_GET["cerrar_sesion"])) {
                             </div>
 
 
-        <!--tabla estudiante-->
+        <!--tabla administrativo-->
          <div class="container my-5">
             <div class="row">
 
 
                 <table >
                     <tr>
-                        <th colspan="8" class="titulo_tabla">LISTADO ESTUDIANTE</th>
+                        <th colspan="8" class="titulo_tabla">LISTADO ADMINISTRATIVO</th>
                     </tr>
 
                 </table>
@@ -220,7 +219,7 @@ if (isset($_GET["cerrar_sesion"])) {
                             <th colspan="8" class="nuevo_usuario">
                             <button class="boton" id="btn-abrir-modal-insertar">+Nuevo</button>
 
-                                <!-- <button class="boton" onclick="window.location.href='/my_school_app/listado_docente/registro_docente.php'" >+Nuevo</button> -->
+                                <!-- <button class="boton" onclick="window.location.href='/my_school_app/listado_administrativo/registro_docente.php'" >+Nuevo</button> -->
                     
                             </th>
                         </tr>
@@ -248,7 +247,7 @@ if (isset($_GET["cerrar_sesion"])) {
         <img class=" schoolapp" src="../iconos/imagenes/my_scholl_app.jpeg" width="60" />
                     <p class="copy">Copyright 2023</p>
                     </footer>
-                    <script src="../listado_estudiante/script_estudiante.js"></script>
+                    <script src="../listado_administrativo/script__administrativo.js"></script>
                     <!--jquery-->
                     <script 
                         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"

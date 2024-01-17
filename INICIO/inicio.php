@@ -21,7 +21,7 @@
     <div class="bordesuperior">
       <img class="logo" src="../iconos/imagenes/escudo3.jpeg"width="70" height="70" >
       <div>
-        <button type="button" onclick="window.location.href='/my_school_app/inicio_sesion/index.php'" class="inicio_sesion btn btn-primary fw-medium">Iniciar sesion</button>
+        <button type="button" onclick="window.location.href='/my_school_app/inicio_sesion_rol/index.php'" class="inicio_sesion btn btn-primary fw-medium">Iniciar sesion</button>
       </div>
     </div>
 

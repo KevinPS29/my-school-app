@@ -1,0 +1,245 @@
+/*paleta de colores
+blanco #FAFAFA, GRIS #C7EEFF, AZUL #0077C0, NEGRO #1D242B
+*/
+/*color del fondo y el color de la letra*/
+body {
+    background-image: linear-gradient(to top,black,#aa9eef);
+    color: white;
+    height: 720px;
+}
+/*estilo del icono y nombre de la App
+se utiliza FLEXBOX para que queden en una sola columna
+*/
+.bordesuperior {
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+/* se redondea el icono de la App*/
+.schoolapp, .configuracion {
+    border-radius: 225px;
+    margin: 0;
+    opacity: 80%;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: spin 1.2s
+        linear infinite;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+}
+
+.loader::before {
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(0deg,
+        #f0c 0%,
+        #80f 100%);
+}
+.loader::after {
+    width: 85%;
+    height: 85%;
+    background-color: #222;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.Informacion{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: 90px;
+}
+
+.logo {
+    border-radius: 225px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    display: grid;
+    place-content: center;
+}
+
+/*estilo al boton de Cursos*/
+.Dropdown-btn {
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    place-content: center;
+}
+
+.Dropdown {
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+
+.Dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    margin-top: 70px;
+    min-width: 80px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0,0.2);
+}
+
+.Dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+}
+
+.Dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.Dropdown:hover .Dropdown-btn {
+    font-weight: bolder;
+}
+
+.Dropdown:hover .Dropdown-content {
+    display: block;
+}
+
+.hover{
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.hover:hover{
+    font-weight: bolder;
+}
+
+
+/*configuracion de tabla de gestion principal e informacion academica*/
+.grid_2 {
+    display: grid;
+    grid-template-rows: [row-1] 250px;
+    grid-template-columns: [col-1] 20% [col-2] 70% ;
+    grid-gap: 30px 30px;
+    /*Para separar cada selda de la grilla de la fila y columna*/
+    font-size: 13.5px;
+    /*tamaño de letra*/
+    font-weight: bold;
+    /*negrilla*/
+    border-width: 2px;
+    border-color: rgba(50, 50, 50,0.1);
+}
+
+th, .datos_usuario {
+    padding: 15px;
+    text-align: center;
+}
+
+.titulo{
+    background-color: blueviolet;
+    font-size: 20px;
+}
+
+/*configurar datos de gestion principal*/
+
+
+.gestion_institucion{
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    text-align: center;
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgba(50, 50, 50,0.3) ;
+    border-left: 3px solid rgba(50, 50, 50,0.1);
+    border-top: 3px solid rgba(50, 50, 50,0.1);
+
+}
+
+.contenido{
+    border-color: black;
+
+}
+
+.contenido:hover{
+    background-color: rgb(100, 100, 100);
+    cursor: pointer;
+}
+
+/*configuracion boton*/
+
+.th, .datos_usuario{
+    margin: 0px;
+    padding: 0px;
+
+}
+.btn_tabla1{
+    margin: 0px;
+    padding: 0px;
+    height: 52.83px;
+    width: 256px;
+    background-color: transparent;
+    border-style: none;
+    color: white;
+    font-weight: bold ;
+}
+
+
+
+/*configurar datos de la institucion*/
+
+
+
+.persona {
+    margin: 5 px;
+}
+
+.pf1 {
+    margin: auto ;
+   text-align: justify;
+   font-size: 16px;
+}
+
+.pf2{
+    margin: auto;
+    text-align: justify;
+    font-size: 16px;
+}
+
+.logo2 {
+    border-radius: 225px;
+}
+
+.bordeinferior{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:  space-between;
+}
+

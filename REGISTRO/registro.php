@@ -28,7 +28,7 @@
         </div>
         <div>
         <label for="APELLIDOS" >APELLIDOS:</label>
-        <br><input placeholder="APELLIDOS" class="form APELLIDOS" type="text" id="txt_APELLIDOS" name="txt_APELLIDOS" required/>
+        <br><input placeholder="apellido" class="form APELLIDOS" type="text" id="txt_APELLIDOS" name="txt_APELLIDOS" required/>
         </div>
         <div class="ladoIz">
         <label for="CEDULA" class="FIL1">CEDULA:</label>

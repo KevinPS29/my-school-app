@@ -196,11 +196,15 @@ footer{
 
 /*Modal*/
 
-#modal::backdrop{
+#modal-insertar::backdrop{
     background-color: rgba(0, 0, 0, .55)
 }
 
-#modal{
+#modal-editar::backdrop{
+    background-color: rgba(0, 0, 0, .55)
+}
+
+#modal-insertar, #modal-editar{
     background-color: #0077C0;
     width: 50%;
     border-radius: 10px;
