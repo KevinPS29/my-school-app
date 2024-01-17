@@ -8,6 +8,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+
 }
 
 /* se redondea el icono de la App*/
@@ -16,7 +17,6 @@ body {
     margin: 0;
     opacity: 80%;
 }
-
 
 .loader {
     width: 60px;
@@ -69,7 +69,6 @@ se utiliza FLEXBOX para que queden en una sola columna
     flex-flow: row wrap;
     justify-content: space-between;
 }
-
 /* se redondea el icono de la App*/
 .schoolapp, .configuracion {
     border-radius: 225px;
@@ -77,9 +76,10 @@ se utiliza FLEXBOX para que queden en una sola columna
     opacity: 80%;
 }
 
+
 /*opacidad al pasar el mouse*/
-.schoolapp:hover {
-    opacity: 90%;
+.schoolapp:hover{
+    opacity: 100%;
 }
 
 .logo {
@@ -96,6 +96,24 @@ a {
 
 .usuario{
     font-weight: bold;
+}
+
+.Informacion{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: 90px;
+}
+
+.configuracion{
+    margin-right: 15px;
+}
+
+.nombre_de_usuario{
+    margin-right: 100px;
 }
 
 
@@ -166,12 +184,37 @@ footer{
     font-weight: bolder;
 }
 
+.btn-sm{
+    margin-right: 0px;
+    align-self: center;
+}
+
+.opciones{
+    text-align: center;
+    padding: 0%;
+}
+
+/*Modal*/
+
+#modal-insertar::backdrop{
+    background-color: rgba(0, 0, 0, .55)
+}
+
+#modal-editar::backdrop{
+    background-color: rgba(0, 0, 0, .55)
+}
+
+#modal-insertar, #modal-editar{
+    background-color: #0077C0;
+    width: 50%;
+    border-radius: 10px;
+}
 
 
 /*alinear registro y tamaño de letra*/
 .registro {
     text-align: center;
-    font-size: 44px;
+    font-size: 30px;
 }
 
 /*configuracion de formulario usando celdas de grilla*/
@@ -187,14 +230,9 @@ footer{
     /*negrilla*/
 }
 
-/*alinear las celdas de NOMBRES, CEDULA, FECHA DE N ES DECIR FILA 1*/
-.FIL1 {
-    justify-self: end;
-}
-
-/*configuracion de fecha de nacimiento alinearlo mas a derecha*/
-.FECHA {
-    padding-right: 2px;
+.ladoDr{
+    width: 300px;
+    height: 80px;
 }
 
 /*estilo a los formularios */
@@ -216,17 +254,6 @@ footer{
     border: 1px solid #ccc;
 }
 
-/*ajustar el checkbox al centro*/
-.checkbox {
-    text-align: center;
-}
-
-/*ajustar los terminos y condiciones*/
-.a {
-    padding-left: 5px;
-    font-weight: bold;
-}
-
 /*ajusta el tamaño de la letra y negrilla del boton*/
 .btn {
     font-size: 20px;
@@ -235,9 +262,22 @@ footer{
 
 .ladoIz {
     justify-self: end;
+    height: 80px;
 }
-
 /*copyright*/
 .copy {
     color: blue;
+}
+
+/*configuracion titulo de la tabla*/
+
+.titulo_tabla{
+    background-color: blueviolet;
+    padding: 10px;
+    text-align: center;
+}
+
+.table{
+    border-style: none;
+    border-radius: 4px;
 }

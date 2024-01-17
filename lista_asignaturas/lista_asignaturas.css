@@ -5,18 +5,9 @@ blanco #FAFAFA, GRIS #C7EEFF, AZUL #0077C0, NEGRO #1D242B
 body {
     background-image: linear-gradient(to top,black,#aa9eef);
     color: white;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
 }
 
-/* se redondea el icono de la App*/
-.schoolapp, .configuracion {
-    border-radius: 225px;
-    margin: 0;
-    opacity: 80%;
-}
-
+/*icono de carga de pagina*/
 
 .loader {
     width: 60px;
@@ -69,17 +60,17 @@ se utiliza FLEXBOX para que queden en una sola columna
     flex-flow: row wrap;
     justify-content: space-between;
 }
-
 /* se redondea el icono de la App*/
-.schoolapp, .configuracion {
+.schoolapp, .Actividades, .configuracion {
     border-radius: 225px;
     margin: 0;
     opacity: 80%;
 }
 
+
 /*opacidad al pasar el mouse*/
-.schoolapp:hover {
-    opacity: 90%;
+.schoolapp:hover{
+    opacity: 100%;
 }
 
 .logo {
@@ -94,10 +85,62 @@ a {
     place-content: center;
 }
 
-.usuario{
+.asignatura{
     font-weight: bold;
 }
 
+.Informacion{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: 90px;
+}
+
+.configuracion{
+    margin-right: 15px;
+}
+
+h1{
+    color: #C7EEFF;
+    font-weight: bolder;
+}
+
+.nombre_de_usuario{
+    margin-right: 100px;
+}
+
+.grid {
+    width: auto;
+    display: grid;
+    grid-template-rows:[row-1] 478px;
+    grid-template-columns: [col-1] 35% [col-2] 35% [col-2] 35%;
+    grid-gap: 0px 0px; /*Para separar cada selda de la grilla de la fila y columna
+    font-size: 13.5px; /*tamaño de letra
+    font-weight: bold;/*negrilla*/
+}
+
+.columna {
+    display: grid;
+    place-content: center;
+    grid-gap: 40px 0px;
+}
+.fila {
+    width: 300px;
+    height: 170px;
+    display: grid;
+    place-content: center;
+    border-radius: 4px;
+
+}
+.calificaciones{
+    border-radius: 250px;
+}
+.calificaciones:hover{
+    cursor: pointer;
+}
 
 /*estilo al boton de Cursos*/
 .Dropdown-btn {
@@ -141,15 +184,11 @@ a {
     display: block;
 }
 
-.boton{
-    font-weight: bolder;
-    border-radius: 8px;
-    background-color: blueviolet;
-    color: white;
+.bordeinferior {
+    background-color: #C7EEFF;
 }
 
 footer{
-    margin-top: 7%;
     display: flex;
     flex-flow: row wrap;
     justify-content:  space-between;
@@ -161,83 +200,6 @@ footer{
     text-decoration: none;
     transition: 0.2s;
 }
-
 .hover:hover{
     font-weight: bolder;
-}
-
-
-
-/*alinear registro y tamaño de letra*/
-.registro {
-    text-align: center;
-    font-size: 44px;
-}
-
-/*configuracion de formulario usando celdas de grilla*/
-.grid {
-    display: grid;
-    grid-template-rows: [row-1] 50px [row-2] 50px [row-3] 50px [row-4] 1fr;
-    grid-template-columns: [col-1] 50% [col-2] 50%;
-    grid-gap: 30px 30px;
-    /*Para separar cada selda de la grilla de la fila y columna*/
-    font-size: 13.5px;
-    /*tamaño de letra*/
-    font-weight: bold;
-    /*negrilla*/
-}
-
-/*alinear las celdas de NOMBRES, CEDULA, FECHA DE N ES DECIR FILA 1*/
-.FIL1 {
-    justify-self: end;
-}
-
-/*configuracion de fecha de nacimiento alinearlo mas a derecha*/
-.FECHA {
-    padding-right: 2px;
-}
-
-/*estilo a los formularios */
-.form {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    width: 250px;
-    padding: 12px 10px;
-    margin: 8px 0;
-    border-style: none;
-    box-sizing: border-box;
-    /*ajusta las cajas a la pantalla*/
-    border-radius: 4px;
-}
-
-/*estilo al formulario al pasar el mouse*/
-.form:hover {
-    border: 1px solid #ccc;
-}
-
-/*ajustar el checkbox al centro*/
-.checkbox {
-    text-align: center;
-}
-
-/*ajustar los terminos y condiciones*/
-.a {
-    padding-left: 5px;
-    font-weight: bold;
-}
-
-/*ajusta el tamaño de la letra y negrilla del boton*/
-.btn {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.ladoIz {
-    justify-self: end;
-}
-
-/*copyright*/
-.copy {
-    color: blue;
 }

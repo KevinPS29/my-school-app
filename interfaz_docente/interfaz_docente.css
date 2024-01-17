@@ -5,18 +5,25 @@ blanco #FAFAFA, GRIS #C7EEFF, AZUL #0077C0, NEGRO #1D242B
 body {
     background-image: linear-gradient(to top,black,#aa9eef);
     color: white;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    height: 720px;
 }
-
+/*estilo del icono y nombre de la App
+se utiliza FLEXBOX para que queden en una sola columna
+*/
+.bordesuperior {
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
 /* se redondea el icono de la App*/
 .schoolapp, .configuracion {
     border-radius: 225px;
     margin: 0;
     opacity: 80%;
 }
-
 
 .loader {
     width: 60px;
@@ -58,28 +65,14 @@ body {
     }
 }
 
-/*estilo del icono y nombre de la App
-se utiliza FLEXBOX para que queden en una sola columna
-*/
-.bordesuperior {
-    background-color: black;
+.Informacion{
+    padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-}
-
-/* se redondea el icono de la App*/
-.schoolapp, .configuracion {
-    border-radius: 225px;
-    margin: 0;
-    opacity: 80%;
-}
-
-/*opacidad al pasar el mouse*/
-.schoolapp:hover {
-    opacity: 90%;
+    height: 90px;
 }
 
 .logo {
@@ -93,11 +86,6 @@ a {
     display: grid;
     place-content: center;
 }
-
-.usuario{
-    font-weight: bold;
-}
-
 
 /*estilo al boton de Cursos*/
 .Dropdown-btn {
@@ -141,20 +129,6 @@ a {
     display: block;
 }
 
-.boton{
-    font-weight: bolder;
-    border-radius: 8px;
-    background-color: blueviolet;
-    color: white;
-}
-
-footer{
-    margin-top: 7%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content:  space-between;
-}
-
 .hover{
     color: white;
     margin-right: 20px;
@@ -167,77 +141,105 @@ footer{
 }
 
 
-
-/*alinear registro y tamaño de letra*/
-.registro {
-    text-align: center;
-    font-size: 44px;
-}
-
-/*configuracion de formulario usando celdas de grilla*/
-.grid {
+/*configuracion de tabla de gestion principal e informacion academica*/
+.grid_2 {
     display: grid;
-    grid-template-rows: [row-1] 50px [row-2] 50px [row-3] 50px [row-4] 1fr;
-    grid-template-columns: [col-1] 50% [col-2] 50%;
+    grid-template-rows: [row-1] 250px;
+    grid-template-columns: [col-1] 20% [col-2] 70% ;
     grid-gap: 30px 30px;
     /*Para separar cada selda de la grilla de la fila y columna*/
     font-size: 13.5px;
     /*tamaño de letra*/
     font-weight: bold;
     /*negrilla*/
+    border-width: 2px;
+    border-color: rgba(50, 50, 50,0.1);
 }
 
-/*alinear las celdas de NOMBRES, CEDULA, FECHA DE N ES DECIR FILA 1*/
-.FIL1 {
-    justify-self: end;
-}
-
-/*configuracion de fecha de nacimiento alinearlo mas a derecha*/
-.FECHA {
-    padding-right: 2px;
-}
-
-/*estilo a los formularios */
-.form {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    width: 250px;
-    padding: 12px 10px;
-    margin: 8px 0;
-    border-style: none;
-    box-sizing: border-box;
-    /*ajusta las cajas a la pantalla*/
-    border-radius: 4px;
-}
-
-/*estilo al formulario al pasar el mouse*/
-.form:hover {
-    border: 1px solid #ccc;
-}
-
-/*ajustar el checkbox al centro*/
-.checkbox {
+th, .datos_usuario {
+    padding: 15px;
     text-align: center;
 }
 
-/*ajustar los terminos y condiciones*/
-.a {
-    padding-left: 5px;
-    font-weight: bold;
-}
-
-/*ajusta el tamaño de la letra y negrilla del boton*/
-.btn {
+.titulo{
+    background-color: blueviolet;
     font-size: 20px;
-    font-weight: bold;
 }
 
-.ladoIz {
-    justify-self: end;
+/*configurar datos de gestion principal*/
+
+
+.gestion_institucion{
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    text-align: center;
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgba(50, 50, 50,0.3) ;
+    border-left: 3px solid rgba(50, 50, 50,0.1);
+    border-top: 3px solid rgba(50, 50, 50,0.1);
+
 }
 
-/*copyright*/
-.copy {
-    color: blue;
+.contenido{
+    border-color: black;
+
 }
+
+.contenido:hover{
+    background-color: rgb(100, 100, 100);
+    cursor: pointer;
+}
+
+/*configuracion boton*/
+
+.th, .datos_usuario{
+    margin: 0px;
+    padding: 0px;
+
+}
+.btn_tabla1{
+    margin: 0px;
+    padding: 0px;
+    height: 52.83px;
+    width: 256px;
+    background-color: transparent;
+    border-style: none;
+    color: white;
+    font-weight: bold ;
+}
+
+
+
+/*configurar datos de la institucion*/
+
+
+
+.persona {
+    margin: 5 px;
+}
+
+.pf1 {
+    margin: auto ;
+   text-align: justify;
+   font-size: 16px;
+}
+
+.pf2{
+    margin: auto;
+    text-align: justify;
+    font-size: 16px;
+}
+
+.logo2 {
+    border-radius: 225px;
+}
+
+.bordeinferior{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:  space-between;
+}
+
